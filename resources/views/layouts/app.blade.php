@@ -245,7 +245,7 @@
         <!-- End Social Area -->
         <!-- Start Footer Area -->  
         <div class="copyright-area">
-            <p style="text-align:center; margin-bottom:50px;">&copy; {{ date('Y') }} Chandrani Music. All Rights Reserved. Managed By <a href="#" target="_blank"> Team</a></p>
+            <p style="text-align:center; margin-bottom:50px;">&copy; {{ date('Y') }} Chandrani Music. All Rights Reserved!. Managed By TEAM</p>
             <div class="container">
                 <!-- <div class="row align-items-center">
                     <div class="col-lg-6 col-md-6 col-sm-5">

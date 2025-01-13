@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Contact Page')
+@section('title', 'Chandrani Music Contact')
 
 @section('content')
     <!-- Start Page Title Area -->
@@ -21,7 +21,7 @@
                     <div class="contact-info">
                         <span class="sub-title">Contact Details</span>
                         <h2>Get in Touch</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra.</p>
+                        <p>Chandrani Music is a vibrant music company dedicated to creating, producing, and promoting captivating musical experiences. Whether it's through recording, distribution, or live performances, Chandrani Music is passionate about connecting artists and audiences with melodies that inspire and resonate.</p>
 
                         <ul>
                             <li>
@@ -29,15 +29,15 @@
                                     <i class="flaticon-location"></i>
                                 </div>
                                 <h3>Our Address</h3>
-                                <p>2750 Quadra Street Victoria Road, New York, Canada</p>
+                                <p>Banja, Sukinda, Jajpur, Odisha, 755018</p>
                             </li>
                             <li>
                                 <div class="icon">
                                     <i class="flaticon-24-hours"></i>
                                 </div>
                                 <h3>Contact</h3>
-                                <p>Mobile: <a href="tel:+44457895789">(+44) - 45789 - 5789</a></p>
-                                <p>Mail: <a href="/cdn-cgi/l/email-protection#7c14191010133c061910181d521f1311"><span class="__cf_email__" data-cfemail="9df5f8f1f1f2dde7f8f1f9fcb3fef2f0">[email&#160;protected]</span></a></p>
+                                <p>Mobile: <a href="tel:7978250660">+91 7978250660</a></p>
+                                <p>Mail: <a href=""><span class="">chandranimusic784@gmail.com</span></a></p>
                             </li>
                             <li>
                                 <div class="icon">
@@ -61,40 +61,38 @@
                     <div class="contact-form">
                         <h2>Ready to Get Started?</h2>
                         <p>Your email address will not be published. Required fields are marked *</p>
-                        <form id="contactForm">
+                        <form method="POST" action="{{ route('contact-save') }}" autocomplete="off">
+                            @csrf
                             <div class="row">
                                 <div class="col-lg-12 col-md-6">
                                     <div class="form-group">
-                                        <input type="text" name="name" id="name" required data-error="Please enter your name" placeholder="Your name">
-                                        <div class="help-block with-errors"></div>
+                                        <input type="text" name="name" id="name" placeholder="Your name *" required>
                                     </div>
                                 </div>
 
                                 <div class="col-lg-12 col-md-6">
                                     <div class="form-group">
-                                        <input type="email" name="email" id="email" required data-error="Please enter your email" placeholder="Your email address">
-                                        <div class="help-block with-errors"></div>
+                                        <input type="email" name="email" id="email" placeholder="Your email address *" required>
                                     </div>
                                 </div>
 
                                 <div class="col-lg-12 col-md-12">
                                     <div class="form-group">
-                                        <input type="text" name="phone_number" id="phone_number" required data-error="Please enter your phone number" placeholder="Your phone number">
-                                        <div class="help-block with-errors"></div>
+                                        <input type="number" name="phone" id="phone" placeholder="Your phone number *" required>
                                     </div>
                                 </div>
 
                                 <div class="col-lg-12 col-md-12">
                                     <div class="form-group">
-                                        <textarea name="message" id="message" cols="30" rows="5" required data-error="Please enter your message" placeholder="Write your message..."></textarea>
+                                        <textarea name="message" id="message" cols="30" rows="5" required placeholder="Write your message *"></textarea>
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
 
                                 <div class="col-lg-12 col-md-12">
                                     <button type="submit" class="default-btn">Send Message</button>
-                                    <div id="msgSubmit" class="h3 text-center hidden"></div>
-                                    <div class="clearfix"></div>
+                                    <!-- <div id="msgSubmit" class="h3 text-center hidden"></div> -->
+                                    <!-- <div class="clearfix"></div> -->
                                 </div>
                             </div>
                         </form>
@@ -104,4 +102,15 @@
         </div>
     </section>
     <!-- End Contact Area -->
+    <script>
+        // Check for success message
+        @if (session('success'))
+            alert("{{ session('success') }}");
+        @endif
+
+        // Check for error message
+        @if (session('error'))
+            alert("{{ session('error') }}");
+        @endif
+    </script>
 @endsection

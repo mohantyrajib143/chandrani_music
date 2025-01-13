@@ -21,3 +21,5 @@ Route::get('/traveller/', [HomeController::class, 'traveller'])->name('traveller
 Route::get('/music/', [HomeController::class, 'music'])->name('music'); // Music Page
 Route::get('/about/', [HomeController::class, 'about'])->name('about'); // About Page
 Route::get('/contact/', [HomeController::class, 'contact'])->name('contact'); // Contact Page
+Route::post('/newsletters', [HomeController::class, 'newsletters'])->name('newsletters');
+Route::post('/contact/save', [HomeController::class, 'contactSave'])->name('contact-save'); // Contact Page
