@@ -80,15 +80,32 @@
 	});
 
 	// Popup Video
+	// $('.popup-youtube').magnificPopup({
+	// 	disableOn: 320,
+	// 	type: 'iframe',
+	// 	mainClass: 'mfp-fade',
+	// 	removalDelay: 160,
+	// 	preloader: false,
+	// 	fixedContentPos: false
+	// });
 	$('.popup-youtube').magnificPopup({
 		disableOn: 320,
 		type: 'iframe',
 		mainClass: 'mfp-fade',
 		removalDelay: 160,
 		preloader: false,
-		fixedContentPos: false
+		fixedContentPos: false,
+		iframe: {
+			patterns: {
+				youtube: {
+					index: 'youtube.com/',  // Identifies YouTube links
+					id: 'v=',                // Extracts the video ID
+					src: 'https://www.youtube.com/embed/%id%?autoplay=1'  // Use embed format with autoplay
+				}
+			}
+		}
 	});
-
+	
 	// Count Time 
 	function makeTimer() {
 		var endTime = new Date("September 20, 2025 17:00:00 PDT");			
@@ -453,7 +470,7 @@
 	});
 
 	// Buy Now Btn
-    $('body').append("<a href='https://1.envato.market/d6Lb3' class='buy-now-btn' target='_blank'><img src='assets/img/envato.png' alt='envato'/> Buy Zelda</a>");
+    // $('body').append("<a href='' class='buy-now-btn' target='_blank'><img src='assets/img/envato.png' alt='envato'/> Contact Us</a>");
 
 }(jQuery));
 

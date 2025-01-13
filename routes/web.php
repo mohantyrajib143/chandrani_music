@@ -14,6 +14,10 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-Route::get('/', [HomeController::class, 'home']); // Home Page
-Route::get('/about/', [HomeController::class, 'about']); // About Page
-Route::get('/contact/', [HomeController::class, 'contact']); // Contact Page
+Route::get('/', [HomeController::class, 'home'])->name('home'); // Home Page
+Route::get('/seasonal/', [HomeController::class, 'seasonal'])->name('seasonal'); // Seasonal Page
+Route::get('/entertainment/', [HomeController::class, 'entertainment'])->name('entertainment'); // Entertainment Page
+Route::get('/traveller/', [HomeController::class, 'traveller'])->name('traveller'); // Traveller Page
+Route::get('/music/', [HomeController::class, 'music'])->name('music'); // Music Page
+Route::get('/about/', [HomeController::class, 'about'])->name('about'); // About Page
+Route::get('/contact/', [HomeController::class, 'contact'])->name('contact'); // Contact Page
