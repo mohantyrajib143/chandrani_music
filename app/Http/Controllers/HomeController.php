@@ -3,13 +3,30 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Videos;
+use Exception;
 
 class HomeController extends Controller
 {
     // Render the Home Page
     public function home()
     {
-        return view('home'); // Returns the home.blade.php view
+        try {
+            // Fetch the latest 5 active videos
+            $videos = Videos::where('is_active', 1)
+                           ->orderBy('id', 'desc')
+                           ->limit(5)
+                           ->get();
+
+            // Pass videos to the home view
+            return view('home', compact('videos'));
+        } catch (Exception $e) {
+            // Log the error message and line number
+            \Log::error("Error in HomeController@home: " . $e->getMessage() . " at line " . $e->getLine());
+            
+            // Optionally, you can display an error page or a friendly message
+            return response()->view('errors.general', ['message' => 'Something went wrong. Please try again later.'], 500);
+        }
     }
 
     // Render the Seasonal Page

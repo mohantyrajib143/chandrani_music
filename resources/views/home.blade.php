@@ -21,23 +21,16 @@
             </div>
 
             <div class="banner-video-slides owl-carousel owl-theme">
-                <div class="banner-video-box">
-                    <img src="assets/img/main-banner-video-img1.jpg" alt="image">
+                @foreach($videos as $video)
+                    <div class="banner-video-box">
+                        <img src="{{ asset('assets/img/' . $video->image) }}" alt="image">
 
-                    <div class="content">
-                        <a href="https://www.youtube.com/watch?v=AXWZ-p3mUbs" class="video-btn popup-youtube"><i class="flaticon-play"></i></a>
-                        <span class="title">TESt TEST TEST</span>
+                        <div class="content">
+                            <a href="{{ $video->yt_link }}" class="video-btn popup-youtube"><i class="flaticon-play"></i></a>
+                            <span class="title">{{ $video->title }}</span>
+                        </div>
                     </div>
-                </div>
-
-                <div class="banner-video-box">
-                    <img src="assets/img/main-banner-video-img1.jpg" alt="image">
-
-                    <div class="content">
-                        <a href="https://www.youtube.com/watch?v=Qw6cyRwJ9fI" class="video-btn popup-youtube"><i class="flaticon-play"></i></a>
-                        <span class="title">TESt TEST TEST</span>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
